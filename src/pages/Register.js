@@ -45,7 +45,7 @@ const Register = () => {
 		</button>
 	</div>
 	<p className="text-xs text-center sm:px-6 text-gray-900">Already have an account?
-		<Link  to="login" className="underline dark:text-blue-900">Login</Link>
+		<Link  to="/login" className="underline dark:text-blue-900">Login</Link>
 	</p>
 </div>
       </div>
