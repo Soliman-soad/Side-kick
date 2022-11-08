@@ -1,8 +1,16 @@
-import React, { useState } from 'react';
+import React, { useContext, useState } from 'react';
+import { Link } from 'react-router-dom';
+import { ProfileContext } from '../../context/UserContext';
 import navImg from '../../image/withBG.jpg'
-<a rel="noopener noreferrer" href="#" className="flex items-center px-4 -mb-1 border-b-2 dark:border-transparent">Link</a>
+
 const Navbar = () => {
+    const{user,logOut} = useContext(ProfileContext)
     const [isMenuOpen, setIsMenuOpen] = useState(false);
+    const signOut =()=>{
+        logOut()
+        .then(()=>{})
+        .catch(err=>console.log(err))
+    }
   return (
     <div >
       <div className="px-4 py-5 mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-xl md:px-24 lg:px-8">
@@ -52,26 +60,47 @@ const Navbar = () => {
                 About us
               </a>
             </li>
-            <li>
-              <a
-                href="/"
+            {
+                user?
+                <li className='flex items-center'>
+                    <div className="relative flex-shrink-0">
+			<span className="absolute bottom-0 right-0 w-4 h-4 dark:bg-green-600 border rounded-full dark:text-gray-100 "></span>
+			<img src={user.photoURL ? user.photoURL : 'https://cdn-icons-png.flaticon.com/512/180/180691.png?w=740&t=st=1667933376~exp=1667933976~hmac=1a461d2424fb0a79589d1208e23741588d5efd0930f0cb299ee072d62c7ca429'} alt="" className="w-12 h-12 border rounded-full dark:bg-gray-500 dark:border-gray-700" />
+		</div>      
+              <button
+                onClick={signOut}
+                className="inline-flex items-center justify-center h-12 px-6 font-medium tracking-wide hover:bg-blue-500 hover:text-white text-blue-500 transition duration-200 rounded shadow-md bg-deep-purple-accent-400 hover:bg-deep-purple-accent-700 focus:shadow-outline focus:outline-none"
+                aria-label="Register"
+                title="Register"
+              >
+                SignOut
+              </button>
+            
+                </li>
+                 :
+                <>
+                <li>
+              <Link
+                to="/register"
                 className="inline-flex items-center justify-center h-12 px-6 font-medium tracking-wide hover:bg-blue-500 hover:text-white text-blue-500 transition duration-200 rounded shadow-md bg-deep-purple-accent-400 hover:bg-deep-purple-accent-700 focus:shadow-outline focus:outline-none"
                 aria-label="Register"
                 title="Register"
               >
                 Register
-              </a>
+              </Link>
             </li>
             <li>
-              <a
-                href="/"
+              <Link
+                to="/login"
                 className="inline-flex items-center justify-center h-12 px-6 font-medium tracking-wide text-blue-500 hover:bg-blue-500 hover:text-white transition duration-200 rounded shadow-md bg-deep-purple-accent-400 hover:bg-deep-purple-accent-700 focus:shadow-outline focus:outline-none"
                 aria-label="Register"
                 title="Sign in"
               >
                 Sign in
-              </a>
+              </Link>
             </li>
+                </>
+            }
           </ul>
           <div className="lg:hidden">
             <button
@@ -163,26 +192,40 @@ const Navbar = () => {
                           About us
                         </a>
                       </li>
-                      <li>
-                        <a
-                          href="/"
+                     {
+                        user ? <li>
+                        <button
+                       onClick={signOut}    
+                          className="inline-flex items-center justify-center w-full h-12 px-6 font-medium tracking-wide text-white bg-blue-500 transition duration-200 rounded shadow-md bg-deep-purple-accent-400 hover:bg-deep-purple-accent-700 focus:shadow-outline focus:outline-none"
+                          aria-label="Register"
+                          title="Sign out"
+                        >
+                          sign out
+                        </button>
+                      </li>:
+                        <>
+                         <li>
+                        <Link
+                          to="/login"
                           className="inline-flex items-center justify-center w-full h-12 px-6 font-medium text-white tracking-wide bg-blue-500 transition duration-200 rounded shadow-md bg-deep-purple-accent-400 hover:bg-deep-purple-accent-700 focus:shadow-outline focus:outline-none"
                           aria-label="Register"
                           title="Sign in"
                         >
                           Sign in
-                        </a>
+                        </Link>
                       </li>
                       <li>
-                        <a
-                          href="/"
+                        <Link
+                          to="/register"
                           className="inline-flex items-center justify-center w-full h-12 px-6 font-medium tracking-wide text-white bg-blue-500 transition duration-200 rounded shadow-md bg-deep-purple-accent-400 hover:bg-deep-purple-accent-700 focus:shadow-outline focus:outline-none"
                           aria-label="Register"
                           title="Register"
                         >
                           Register
-                        </a>
+                        </Link>
                       </li>
+                        </>
+                     }
                     </ul>
                   </nav>
                 </div>
