@@ -13,7 +13,7 @@ const Navbar = () => {
     }
   return (
     <div className='sticky top-0'>
-      <div className="px-4 py-5 w-full bg-white shadow-lg">
+      <div className="px-14 py-5 w-full bg-white shadow-lg">
         <div className="relative flex items-center justify-between">
         <div className='flex items-center'>
         <img alt="" className="w-16 h-16 rounded-full ring-2 ring-offset-4  ring-white " src={navImg} />
