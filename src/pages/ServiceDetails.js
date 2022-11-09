@@ -1,6 +1,8 @@
 import React, { useContext, useEffect, useState } from 'react';
 import { useLoaderData } from 'react-router-dom';
 import { ProfileContext } from '../context/UserContext';
+import { PhotoProvider, PhotoView } from 'react-photo-view';
+import 'react-photo-view/dist/react-photo-view.css';
 import moment from 'moment';
 
 const ServiceDetails = () => {
@@ -42,7 +44,11 @@ const ServiceDetails = () => {
     }
     return (
         <div>
+            <PhotoProvider>
+      <PhotoView >
             <img src={details[0].img} alt='' className='mx-auto w-8/12 h-96' />
+      </PhotoView>
+    </PhotoProvider>
             <div className='px-24 py-10'>
             <h1 className='text-2xl py-2 font-bold text-gray-800'>{details[0].name}</h1>
                 <div className='flex items-center py-5'>
@@ -75,11 +81,10 @@ const ServiceDetails = () => {
 </select>
 			<button type="submit" className="py-2 px-2 my-8 font-semibold rounded-md text-white bg-blue-500">Leave feedback</button>
 		</form>
-        <div>
+        <div className='w-full'>
       {
         presentReview.map(present => {
-            return <>
-              <div key={present._id} className="container flex flex-col w-full m-full p-6 mx-auto divide-y rounded-md divide-gray-700 text-gray-900 shadow-lg border-2">
+            return <div key={present._id} className=" flex flex-col w-full m-full p-6 mx-auto divide-y rounded-md divide-gray-700 text-gray-900 shadow-lg border-2">
 	<div className="flex justify-between p-4">
 		<div className="flex space-x-4">
 			<div>
@@ -102,7 +107,7 @@ const ServiceDetails = () => {
 		
 	</div>
 </div>
-            </>}
+            }
         )
       }
         </div>

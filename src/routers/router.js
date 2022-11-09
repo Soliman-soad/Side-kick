@@ -1,3 +1,4 @@
+import AddServices from "../pages/AddServices";
 import ErrorPage from "../pages/errors/ErrorPage";
 import Home from "../pages/Home";
 import Login from "../pages/Login";
@@ -41,6 +42,10 @@ export const router = createBrowserRouter([
                 path:'service/:id',
                 element:<ServiceDetails/>,
                 loader: ({params}) => fetch(`http://localhost:5000/service/${params.id}`)
+            },
+            {
+                path:'addService',
+                element:<AddServices/>,
             }
         ]
     }

@@ -1,5 +1,5 @@
 import React, { useContext, useState } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, NavLink } from 'react-router-dom';
 import { ProfileContext } from '../../context/UserContext';
 import navImg from '../../image/withBG.jpg'
 
@@ -21,44 +21,64 @@ const Navbar = () => {
         </div>
           <ul className="flex items-center hidden space-x-8 lg:flex">
             <li>
-              <a
-                href="/"
+              <NavLink
+                to="/"
                 aria-label="Our product"
                 title="Our product"
                 className="font-medium tracking-wide text-gray-900 transition-colors duration-200 hover:text-teal-accent-400"
               >
-                Product
-              </a>
+                Home
+              </NavLink>
             </li>
             <li>
-              <a
-                href="/"
+              <NavLink
+                to="/services"
                 aria-label="Our product"
                 title="Our product"
                 className="font-medium tracking-wide text-gray-900 transition-colors duration-200 hover:text-teal-accent-400"
               >
-                Features
-              </a>
+                Services
+              </NavLink>
             </li>
             <li>
-              <a
-                href="/"
+              <NavLink
+                to="/myreview"
                 aria-label="Product pricing"
                 title="Product pricing"
                 className="font-medium tracking-wide text-gray-900 transition-colors duration-200 hover:text-teal-accent-400"
               >
-                Pricing
-              </a>
+                My Reviews
+              </NavLink>
             </li>
             <li>
-              <a
-                href="/"
+              <NavLink
+                to="/profile"
                 aria-label="About us"
                 title="About us"
                 className="font-medium tracking-wide text-gray-900 transition-colors duration-200 hover:text-teal-accent-400"
               >
-                About us
-              </a>
+                Profile
+              </NavLink>
+            </li>
+            <li>
+              <NavLink
+                to="/blog"
+                aria-label="About us"
+                title="About us"
+                className="font-medium tracking-wide text-gray-900 transition-colors duration-200 hover:text-teal-accent-400"
+              >
+                Blog
+              </NavLink>
+            </li>
+            <li>
+              <NavLink
+                to="/addService"
+                aria-label="About us"
+                title="About us"
+                className="font-medium tracking-wide text-gray-900 transition-colors duration-200 hover:text-teal-accent-400"
+              >
+                Add service
+              </NavLink>
             </li>
             {
                 user?
