@@ -1,7 +1,10 @@
 import React from 'react';
-import { Typewriter, useTypewriter} from 'react-simple-typewriter'
+import { Link, useLoaderData } from 'react-router-dom';
+import { Typewriter} from 'react-simple-typewriter'
 import bio from '../image/profile.jpg'
+import ServiceCard from './ServiceCard';
 const Home = () => {
+    const services = useLoaderData();
     return (
         <div>
             <div className='flex w-full flex-col-reverse md:flex-row lg:flex-row pt-5'>
@@ -32,7 +35,22 @@ const Home = () => {
                      </p>
                 </div>
                 <div className='w-4/5'><img src={bio} className='w-full' alt=''/></div>
+            </div>
+
+            <div>
+                <div className='px-10 pt-10'>
+                    <h3 className='text-sm uppercase text-blue-500 font-semibold'>services</h3>
+                    <h1 className='text-5xl uppercase'>What are my service</h1>
+                </div>
+                <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 my-5 mx-2'>
+                {
+                    services.map(service => <ServiceCard key={service._id} service={service}></ServiceCard>)
+                }
+                </div>
             </div>      
+            <div className='w-full'>
+                <Link className='text-blue-500 mx-auto uppercase text-semibold pl-5 pb-5'>Click here for more services...</Link>
+            </div>
         </div>
     );
 };
