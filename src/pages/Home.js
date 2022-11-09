@@ -6,7 +6,7 @@ import ServiceCard from './ServiceCard';
 const Home = () => {
     const services = useLoaderData();
     return (
-        <div className='m-24'>
+        <div>
             <div className='flex w-full flex-col-reverse md:flex-row lg:flex-row pt-5'>
                 <div className=' text-gray-800 w-1/2 text-left my-auto pl-10'>
                     <h4 className='text-sm uppercase'>
