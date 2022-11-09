@@ -3,7 +3,7 @@ import React from 'react';
 const ServiceCard = ({service}) => {
     return (
         <div>
-            <div className="flex flex-col text-gray-700 max-w-md p-6 space-y-6 overflow-hidden rounded-lg shadow-md hover:bg-blue-500 hover:text-white hover:scale-105 ease-linear duration-75 dark:text-gray-900">
+            <div className="flex flex-col text-gray-700 max-w-md p-6 space-y-6 overflow-hidden rounded-lg shadow-md hover:bg-blue-500 hover:text-white hover:p-5 ease-linear duration-75 dark:text-gray-900">
 	<div className="flex space-x-4">
 		
 	</div>
@@ -11,6 +11,7 @@ const ServiceCard = ({service}) => {
 		<img src={service.img} alt="" className="object-cover w-full mb-4 h-44 sm:h-96 dark:bg-gray-500" />
 		<h2 className="mb-1 text-xl font-semibold">{service.name}</h2>
 		<p className="text-sm ">{(service.description).slice(0,100) + '...'}</p>
+        <h3 className='text-xl py-3 text-gray-600'>Price:${service.price}</h3>
 	</div>
 	<div className="flex flex-wrap flex-row-reverse justify-between">
 		<div className="space-x-2">
