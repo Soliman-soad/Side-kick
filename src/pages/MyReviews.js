@@ -3,6 +3,7 @@ import { ProfileContext } from '../context/UserContext';
 
 const MyReviews = () => {
     const {user} = useContext(ProfileContext)
+    const[delt, setDelt] =useState(true);
     
     console.log(user)
     const[review,setReview]=useState([]);
@@ -10,11 +11,23 @@ const MyReviews = () => {
         fetch(`http://localhost:5000/reviews`)
         .then(res=>res.json())
         .then(data => setReview(data))
-    },[])
+    },[delt])
     const presentReview = review.filter(re => re.user?.uid===user?.uid)
     
     console.log(presentReview)
     console.log(review)
+  
+
+  const  handleDelete = id =>{
+    fetch(`http://localhost:5000/review/${id}`,{
+      method:'DELETE'
+    })
+    .then(res => res.json())
+    .then(data =>{
+      console.log(data);
+      setDelt(!delt)
+    })
+  }
     return (
         <div>
             {
@@ -37,8 +50,11 @@ const MyReviews = () => {
                     <span className="text-xl font-bold">{present.ratings}</span>
                 </div>
                 <div>
-                    <h1>Review of {present?.title}</h1>
-                    []
+                    <h1 className='text-xl text-blue-500'>Review of {present?.title}</h1>
+                    <div>
+                        <button onClick={()=>handleDelete(present._id)} className='text-white bg-red-600 px-3 m-2 py-2 rounded-md'>Delete</button>
+                        <button className='text-white bg-yellow-500 px-3 m-2 py-2 rounded-md' >Edit</button>
+                    </div>
                 </div>
             </div>
             <div className="p-4 space-y-2 text-sm dark:text-gray-800">
