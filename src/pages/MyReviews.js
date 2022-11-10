@@ -12,9 +12,16 @@ const MyReviews = () => {
     console.log(user)
     const[review,setReview]=useState([]);
     useEffect(()=>{
-        fetch(`http://localhost:5000/reviews`)
+        fetch(`http://localhost:5000/review?email=${user.email}`,{
+            headers:{
+                authorization: `Bearer ${localStorage.getItem('token')}`
+            }
+        }
+        )
         .then(res=>res.json())
-        .then(data => setReview(data))
+        .then(data => {
+            console.log()
+            setReview(data)})
     },[delt])
     const presentReview = review.filter(re => re.user?.uid===user?.uid)
     
