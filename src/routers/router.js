@@ -1,4 +1,5 @@
 import AddServices from "../pages/AddServices";
+import Blog from "../pages/Blog";
 import ErrorPage from "../pages/errors/ErrorPage";
 import Home from "../pages/Home";
 import Login from "../pages/Login";
@@ -59,6 +60,10 @@ export const router = createBrowserRouter([
                 path:'review/:id',
                 element:<ReviewEdit/>,
                 loader: ({params}) => fetch(`http://localhost:5000/review/${params.id}`)
+            },
+            {
+                path:'blog',
+                element:<Blog/>
             }
         ]
     }

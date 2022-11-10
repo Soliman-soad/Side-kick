@@ -33,8 +33,8 @@ const ReviewEdit = () => {
     }
     return (
         <div>
-            
-		<form onSubmit={handleSubmit} className="flex flex-col md:flex-row justify-evenly items-center w-full">
+            <h1 className='text-2xl m-10 text-center'>Edit your review</h1>
+		<form onSubmit={handleSubmit} className="flex flex-col md:flex-row justify-evenly items-center w-full mb-10">
 			<textarea name='message' rows="2" placeholder="Message..." className="p-5 mr-10 rounded-md w-3/5 resize-none dark:text-gray-900 border-2 border-gray-500"></textarea>
             <select name='ratings' className="border-2 mr-5 select p-2 md:py-1 py-10  w-full max-w-xs">
   <option  disabled selected>No ratings</option>
@@ -48,7 +48,7 @@ const ReviewEdit = () => {
   <option value='4.5'>4.5</option>
   <option value='5'>5</option>
 </select>
-<button type="submit" className="py-2 px-2 disabled:opacity-30  my-8 font-semibold rounded-md text-white bg-blue-500">Leave feedback</button>
+<button type="submit" className="py-2 px-2 disabled:opacity-30  my-8 font-semibold rounded-md text-white bg-blue-500">Edit confirm</button>
 			
 		</form>
         </div>

@@ -1,5 +1,6 @@
 import React, { useContext, useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
+import { toast, ToastContainer } from 'react-toastify';
 import { ProfileContext } from '../context/UserContext';
 
 const MyReviews = () => {
@@ -26,11 +27,16 @@ const MyReviews = () => {
     .then(res => res.json())
     .then(data =>{
       console.log(data);
+      toast.error('Review deleted')
       setDelt(!delt)
     })
   }
     return (
         <div>
+            <h1 className='text-xl m-10 text-center'>Here your reviews:</h1>
+            {
+                presentReview.length===0 ? <div className='w-full h-4/5 p-48 font-bold flex justify-center items-center text-5xl text-gray-400'> No review</div> :<></>
+            }
             {
                 presentReview.map(present => {
                     return <div key={present._id} className=" flex flex-col w-full m-full p-6 mx-auto divide-y rounded-md divide-gray-700 text-gray-900 shadow-lg border-2">
@@ -62,6 +68,7 @@ const MyReviews = () => {
                 <p>{present.message}</p>
                 
             </div>
+            <ToastContainer/>
         </div>
                     }
                 )
