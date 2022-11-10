@@ -12,7 +12,7 @@ const MyReviews = () => {
     console.log(user)
     const[review,setReview]=useState([]);
     useEffect(()=>{
-        fetch(`http://localhost:5000/review?email=${user.email}`,{
+        fetch(`https://sidekick-server-soliman-soad.vercel.app/review?email=${user.email}`,{
             headers:{
                 authorization: `Bearer ${localStorage.getItem('token')}`
             }
@@ -30,7 +30,7 @@ const MyReviews = () => {
   
 
   const  handleDelete = id =>{
-    fetch(`http://localhost:5000/review/${id}`,{
+    fetch(`https://sidekick-server-soliman-soad.vercel.app/review/${id}`,{
       method:'DELETE'
     })
     .then(res => res.json())

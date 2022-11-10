@@ -15,7 +15,7 @@ const ServiceDetails = () => {
     const [change,setChange]= useState(false)
     const[review,setReview]=useState([]);
     useEffect(()=>{
-        fetch(`http://localhost:5000/reviews`)
+        fetch(`https://sidekick-server-soliman-soad.vercel.app/reviews`)
         .then(res=>res.json())
         .then(data => setReview(data))
     },[change])
@@ -34,7 +34,7 @@ const ServiceDetails = () => {
             time:moment().format('MMMM Do YYYY, h:mm:ss a') 
         }
         console.log(message,ratings,ratingsData)
-        fetch(`http://localhost:5000/review/${details[0]._id}`,{
+        fetch(`https://sidekick-server-soliman-soad.vercel.app/review/${details[0]._id}`,{
             method:"POST",
             headers:{
                 "content-type":"application/json"

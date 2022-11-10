@@ -22,7 +22,7 @@ const Login = () => {
 			const currentUser ={
 				user: user.email
 			}
-            fetch('http://localhost:5000/jwt',{
+            fetch('https://sidekick-server-soliman-soad.vercel.app/jwt',{
 				method:'POST',
 				headers:{
 					'content-type':'application/json'
@@ -49,7 +49,7 @@ const Login = () => {
 			const currentUser ={
 				user: user.email
 			}
-			fetch('http://localhost:5000/jwt',{
+			fetch('https://sidekick-server-soliman-soad.vercel.app/jwt',{
 				method:'POST',
 				headers:{
 					'content-type':'application/json'

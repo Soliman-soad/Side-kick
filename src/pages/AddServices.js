@@ -18,7 +18,7 @@ const AddServices = () => {
             time:time
         }
         
-        fetch(`http://localhost:5000/services`,{
+        fetch(`https://sidekick-server-soliman-soad.vercel.app/services`,{
             method:"POST",
             headers:{
                 "content-type":"application/json"

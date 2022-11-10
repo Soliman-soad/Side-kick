@@ -31,7 +31,7 @@ export const router = createBrowserRouter([
             {
                 path:'/',
                 element:<Home/>,
-                loader: ()=> fetch('http://localhost:5000/services')
+                loader: ()=> fetch('https://sidekick-server-soliman-soad.vercel.app/services')
             },
             {
                 path:'profile',
@@ -40,12 +40,12 @@ export const router = createBrowserRouter([
             {
                 path:'services',
                 element:<Services/>,
-                loader: ()=> fetch('http://localhost:5000/allServices')
+                loader: ()=> fetch('https://sidekick-server-soliman-soad.vercel.app/allServices')
             },
             {
                 path:'service/:id',
                 element:<ServiceDetails/>,
-                loader: ({params}) => fetch(`http://localhost:5000/service/${params.id}`)
+                loader: ({params}) => fetch(`https://sidekick-server-soliman-soad.vercel.app/service/${params.id}`)
             },
             {
                 path:'addService',
@@ -54,12 +54,12 @@ export const router = createBrowserRouter([
             {
                 path:'myReview',
                 element:<PrivateRouter><MyReviews/></PrivateRouter>,
-                loader: ()=> fetch('http://localhost:5000/allServices')
+                loader: ()=> fetch('https://sidekick-server-soliman-soad.vercel.app/allServices')
             },
             {
                 path:'review/:id',
                 element:<ReviewEdit/>,
-                loader: ({params}) => fetch(`http://localhost:5000/review/${params.id}`)
+                loader: ({params}) => fetch(`https://sidekick-server-soliman-soad.vercel.app/review/${params.id}`)
             },
             {
                 path:'blog',
