@@ -83,7 +83,7 @@ const ServiceDetails = () => {
 		<form onSubmit={handleSubmit} className="flex flex-col md:flex-row justify-evenly items-center w-full">
 			<textarea name='message' rows="2" placeholder="Message..." className="p-5 mr-10 rounded-md w-3/5 resize-none dark:text-gray-900 border-2 border-gray-500"></textarea>
             <select name='ratings' className="border-2 mr-5 select p-2 md:py-1 py-10  w-full max-w-xs">
-  <option  disabled selected>Pick your ratings</option>
+  <option  disabled selected>No ratings</option>
   <option value='1'>1</option>
   <option value='1.5'>1.5</option>
   <option value='2'>2</option>

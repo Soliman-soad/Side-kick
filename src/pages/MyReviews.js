@@ -1,4 +1,5 @@
 import React, { useContext, useEffect, useState } from 'react';
+import { Link } from 'react-router-dom';
 import { ProfileContext } from '../context/UserContext';
 
 const MyReviews = () => {
@@ -53,7 +54,7 @@ const MyReviews = () => {
                     <h1 className='text-xl text-blue-500'>Review of {present?.title}</h1>
                     <div>
                         <button onClick={()=>handleDelete(present._id)} className='text-white bg-red-600 px-3 m-2 py-2 rounded-md'>Delete</button>
-                        <button className='text-white bg-yellow-500 px-3 m-2 py-2 rounded-md' >Edit</button>
+                        <Link to={`/review/${present._id}`} className='text-white bg-yellow-500 px-3 m-2 py-2 rounded-md' >Edit</Link>
                     </div>
                 </div>
             </div>
