@@ -2,8 +2,10 @@ import moment from 'moment';
 import React, { useContext } from 'react';
 import { useLoaderData, useNavigate } from 'react-router-dom';
 import { ProfileContext } from '../context/UserContext';
+import { useTitle } from '../custom-Hooks/useTitle';
 
 const ReviewEdit = () => {
+    useTitle('Review edit')
     const {user} = useContext(ProfileContext)
     const navigate = useNavigate()
     const details = useLoaderData();

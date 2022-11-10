@@ -2,8 +2,10 @@ import React, { useContext, useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { toast, ToastContainer } from 'react-toastify';
 import { ProfileContext } from '../context/UserContext';
+import { useTitle } from '../custom-Hooks/useTitle';
 
 const MyReviews = () => {
+    useTitle('My Reviews')
     const {user} = useContext(ProfileContext)
     const[delt, setDelt] =useState(true);
     

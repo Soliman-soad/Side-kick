@@ -1,10 +1,11 @@
 import React, { useContext } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { ProfileContext } from '../context/UserContext';
+import { useTitle } from '../custom-Hooks/useTitle';
 
 const Profile = () => {
     const {user,changeProfile} = useContext(ProfileContext);
-    
+    useTitle('Profile')
     const navigate = useNavigate()
     const handleChange =event=>{
         event.preventDefault();

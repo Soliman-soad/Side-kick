@@ -6,8 +6,10 @@ import 'react-photo-view/dist/react-photo-view.css';
 import { toast, ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import moment from 'moment';
+import { useTitle } from '../custom-Hooks/useTitle';
 
 const ServiceDetails = () => {
+    useTitle('Service Details')
     const {user} = useContext(ProfileContext)
     const details = useLoaderData();
     const [change,setChange]= useState(false)

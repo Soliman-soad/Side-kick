@@ -2,11 +2,13 @@ import React from 'react';
 import { Link, useLoaderData } from 'react-router-dom';
 import { Typewriter} from 'react-simple-typewriter'
 import { toast, ToastContainer } from 'react-toastify';
+import { useTitle } from '../custom-Hooks/useTitle';
 import bio from '../image/profile.jpg'
 import ServiceCard from './ServiceCard';
 
 const Home = () => {
     const services = useLoaderData();
+    useTitle('Home')
     const handleSubmit=event=>{
         event.preventDefault()
         toast.success('Message send!')
