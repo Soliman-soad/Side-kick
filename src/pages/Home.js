@@ -9,8 +9,7 @@ import ServiceCard from './ServiceCard';
 const Home = () => {
     const services = useLoaderData();
     useTitle('Home')
-    const handleSubmit=event=>{
-        event.preventDefault()
+    const handleSubmit=()=>{        
         toast.success('Message send!')
     }
     return (
@@ -185,7 +184,7 @@ const Home = () => {
 				</p>
 			</div>
 		</div>
-		<form onSubmit={()=>handleSubmit()} className="flex flex-col py-6 space-y-6 md:py-0 md:px-6 ng-untouched ng-pristine ng-valid">
+		<div  className="flex flex-col py-6 space-y-6 md:py-0 md:px-6 ng-untouched ng-pristine ng-valid">
 			<label className="block">
 				<span className="mb-1">Full name</span>
 				<input type="text" name='name' placeholder="name" className="block w-full rounded-md shadow-sm focus:ring focus:ring-opacity-75 focus:ring-violet-400 p-3" />
@@ -198,8 +197,8 @@ const Home = () => {
 				<span className="mb-1">Message</span>
 				<textarea rows="3" name='message' className="block w-full rounded-md focus:ring focus:ring-opacity-75 focus:ring-violet-400 p-3 "></textarea>
 			</label>
-			<button type="submit" className="self-center px-8 py-3 text-lg rounded focus:ring hover:ring focus:ring-opacity-75 dark:bg-violet-400 dark:text-gray-900 focus:ring-violet-400 hover:ring-violet-400">Submit</button>
-		</form>
+			<button onClick={handleSubmit} className="self-center px-8 py-3 text-lg rounded focus:ring hover:ring focus:ring-opacity-75 dark:bg-violet-400 dark:text-gray-900 focus:ring-violet-400 hover:ring-violet-400">Submit</button>
+		</div>
         <ToastContainer/>
 	</div>
 </section>
