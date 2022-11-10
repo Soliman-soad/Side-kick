@@ -3,6 +3,8 @@ import { useLoaderData } from 'react-router-dom';
 import { ProfileContext } from '../context/UserContext';
 import { PhotoProvider, PhotoView } from 'react-photo-view';
 import 'react-photo-view/dist/react-photo-view.css';
+import { toast, ToastContainer } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 import moment from 'moment';
 
 const ServiceDetails = () => {
@@ -43,6 +45,18 @@ const ServiceDetails = () => {
             setChange(!change)
             console.log(data)})
     }
+    const handleError =()=>{
+        toast.error('Login for insert review', {
+            position: "top-center",
+            autoClose: 3000,
+            hideProgressBar: false,
+            closeOnClick: true,
+            pauseOnHover: true,
+            draggable: true,
+            progress: undefined,
+            theme: "light",
+            });
+    }
     return (
         <div>
             <PhotoProvider>
@@ -80,7 +94,17 @@ const ServiceDetails = () => {
   <option value='4.5'>4.5</option>
   <option value='5'>5</option>
 </select>
-			<button type="submit" className="py-2 px-2 my-8 font-semibold rounded-md text-white bg-blue-500">Leave feedback</button>
+			{
+                user?
+                <>
+                <button type="submit" className="py-2 px-2 disabled:opacity-30  my-8 font-semibold rounded-md text-white bg-blue-500">Leave feedback</button>
+                </>
+                :
+                <div >
+                <button type='button' onClick={()=>handleError()} className="py-2 px-2   my-8 font-semibold rounded-md text-white bg-blue-500">Leave feedback</button>
+                </div>
+            }
+            <ToastContainer/>
 		</form>
         <div className='w-full'>
       {

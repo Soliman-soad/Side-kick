@@ -38,7 +38,7 @@ const MyReviews = () => {
                 </div>
                 <div>
                     <h1>Review of {present?.title}</h1>
-                    
+                    []
                 </div>
             </div>
             <div className="p-4 space-y-2 text-sm dark:text-gray-800">
