@@ -1,5 +1,6 @@
 import React from 'react';
-
+import { toast, ToastContainer } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 const AddServices = () => {
     const handleRegister = event =>{
         event.preventDefault();
@@ -16,6 +17,7 @@ const AddServices = () => {
             price:price,
             time:time
         }
+        
         fetch(`http://localhost:5000/services`,{
             method:"POST",
             headers:{
@@ -26,7 +28,18 @@ const AddServices = () => {
         )
         .then(res=>res.json())
         .then(data => {
+            toast.success('Service added!', {
+                position: "top-center",
+                autoClose: 3000,
+                hideProgressBar: false,
+                closeOnClick: true,
+                pauseOnHover: true,
+                draggable: true,
+                progress: undefined,
+                theme: "light",
+                });    
             console.log(data)})
+            
     }        
 
     return (
@@ -58,6 +71,7 @@ const AddServices = () => {
 		</div>
 		<button type='submit' className="block w-full p-3 text-center rounded-sm  bg-blue-500 text-white font-bold">Register</button>
 	</form>
+    <ToastContainer/>
         </div>
     );
 };

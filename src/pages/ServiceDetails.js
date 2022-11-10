@@ -26,6 +26,7 @@ const ServiceDetails = () => {
             id:details[0]._id,
             message:message,
             ratings:ratings,
+            title:details[0].name,
             time:moment().format('MMMM Do YYYY, h:mm:ss a') 
         }
         console.log(message,ratings,ratingsData)
@@ -88,10 +89,10 @@ const ServiceDetails = () => {
 	<div className="flex justify-between p-4">
 		<div className="flex space-x-4">
 			<div>
-				<img src={present.user.providerData[0].photoURL ? present.user.providerData[0].photoURL :"https://cdn-icons-png.flaticon.com/512/180/180691.png?w=740&t=st=1667933376~exp=1667933976~hmac=1a461d2424fb0a79589d1208e23741588d5efd0930f0cb299ee072d62c7ca429"} alt="" className="object-cover w-12 h-12 rounded-full dark:bg-gray-500" />
+				<img src={present?.user?.providerData[0]?.photoURL ? present?.user?.providerData[0]?.photoURL :"https://cdn-icons-png.flaticon.com/512/180/180691.png?w=740&t=st=1667933376~exp=1667933976~hmac=1a461d2424fb0a79589d1208e23741588d5efd0930f0cb299ee072d62c7ca429"} alt="" className="object-cover w-12 h-12 rounded-full dark:bg-gray-500" />
 			</div>
 			<div>
-				<h4 className="font-bold">{present.user.providerData[0].displayName}</h4>
+				<h4 className="font-bold">{present?.user?.providerData[0]?.displayName}</h4>
 				<span className="text-xs dark:text-gray-700">{present.time}</span>
 			</div>
 		</div>
