@@ -44,12 +44,12 @@ const Home = () => {
                         welcome to my website, myself Soliman Alam, I am profesional privet tour guid.I am also a visual storyteller.  I have been working as a private tourist guide as well as an operator since 2010. If you want to have a nice trip with a friendly and trustworthy guide, feel free to knock me. I am here to welcome you from the bottom of my heart!
                      </p>
                 </div>
-                <div className='w-4/5'><img src={bio} className='w-full' alt=''/></div>
+                <div data-aos="zoom-in" data-aos-mirror="true" className='w-4/5 hidden lg:inline md:inline'><img src={bio} className='w-full' alt=''/></div>
             </div>
 
-            <div className='py-24'>
-                <div className='px-10 pt-10'>
-                    <h3 className='text-sm uppercase text-blue-500 text-center font-semibold'>services</h3>
+            <div data-aos="fade-up" data-aos-mirror="true" className='py-24'>
+                <div   className='px-10 pt-10'>
+                    <h3 className='text-sm uppercase text-teal-500 text-center font-semibold'>services</h3>
                     <h1 className='text-5xl uppercase text-center'>What are my service</h1>
                 </div>
                 <div className='grid grid-cols-1 gap-10 md:grid-cols-2 lg:grid-cols-3 my-5 mx-2'>
@@ -62,7 +62,7 @@ const Home = () => {
             </div>
             </div>      
             
-            <div className="px-4 py-16 mx-auto sm:max-w-xl mb-24 md:max-w-full lg:max-w-screen-xl md:px-24 lg:px-8 lg:py-20">
+            <div data-aos="zoom-out-down" data-aos-mirror="true" className="px-4 py-16 mx-auto sm:max-w-xl mb-24 md:max-w-full lg:max-w-screen-xl md:px-24 lg:px-8 lg:py-20">
       <div className="grid gap-10 lg:grid-cols-2">
         <div className="flex flex-col justify-center md:pr-8 xl:pr-0 lg:max-w-lg">
           <div className="flex items-center justify-center w-16 h-16 mb-4 rounded-full bg-teal-accent-400">
@@ -161,7 +161,7 @@ const Home = () => {
         </div>
       </div>
     </div>
-    <section className="py-6 dark:bg-gray-800 dark:text-gray-50 mb-24 mb-10 mt-5 py-8 flex flex-col w-10/12 m-full mx-auto divide-y rounded-md divide-gray-700 text-white shadow-lg border-2">
+    <section data-aos="fade-up" data-aos-mirror="true" className="py-6 dark:bg-gray-800 dark:text-gray-50 mb-24 mb-10 mt-5 py-8 flex flex-col w-10/12 m-full mx-auto divide-y rounded-md divide-gray-700 text-white shadow-lg border-2">
 	<div className="grid max-w-6xl grid-cols-1 px-6 mx-auto lg:px-8 md:grid-cols-2 md:divide-x">
 		<div className="py-6 md:py-0 md:px-6">
 			<h1 className="text-4xl font-bold">Get in touch</h1>

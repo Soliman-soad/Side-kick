@@ -14,14 +14,14 @@ const ServiceCard = ({service}) => {
     const presentReview=(id) => review.filter(re => re.id===id)
     return (
         <div>
-            <div className="flex flex-col text-gray-100 max-w-md py-4 h-full px-2 space-y-6 overflow-hidden rounded-lg shadow-md hover:bg-teal-600 bg-gray-700 hover:text-white hover:p-5 ease-linear duration-75 dark:text-white">
+            <div  data-aos="zoom-in"  className="flex flex-col text-gray-100 max-w-md py-2 h-full px-2 space-y-6 overflow-hidden rounded-lg shadow-md hover:bg-teal-600 bg-gray-700 hover:text-white hover:p-5 ease-linear duration-75 dark:text-white">
 	<div className="flex space-x-4">
 		
 	</div>
 	<div>
 	<PhotoProvider>
       <PhotoView >
-	  <img src={service.img} alt="" className="object-cover w-full mb-4 h-44 sm:h-96 dark:bg-gray-500" />
+	  <img src={service.img} alt="" className="object-cover w-[350px] mx-auto mb-4 dark:bg-gray-500" />
       </PhotoView>
     </PhotoProvider>
 		<h2 className="mb-1 text-xl font-semibold">{service.name}</h2>
