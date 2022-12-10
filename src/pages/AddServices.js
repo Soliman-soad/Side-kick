@@ -43,33 +43,33 @@ const AddServices = () => {
     }        
 
     return (
-        <div>
-            <h1 className='text-2xl text-center mt-5 mb-3'>Add a service</h1>
+        <div className='mb-10 mt-5 py-8 flex flex-col w-10/12 md:w-5/12 m-full mx-auto divide-y rounded-md divide-gray-700 text-black shadow-lg border-2'>
+            <h1 className='text-2xl text-center mt-5 mb-3 text-white'>Add a service</h1>
             <form onSubmit={handleRegister} className="space-y-6 p-10 ng-untouched ng-pristine ng-valid">
 		<div className="space-y-1 text-sm">
 			
-			<input type="text" name="name" id="username" placeholder="Service name" className="w-full px-4 py-3 rounded-md border-gray-700 dark:bg-gray-200 text-gray-900 " />
+			<input type="text" name="name" id="username" placeholder="Service name" className="w-full px-4 py-3 rounded-md border-gray-700 dark:bg-gray-200 " />
 		</div>
 		<div className="space-y-1 text-sm">
 			
-			<input type="text" name="img" id="img" placeholder="Img url" className="w-full px-4 py-3 rounded-md border-gray-700 dark:bg-gray-200 text-gray-900 " />
+			<input type="text" name="img" id="img" placeholder="Img url" className="w-full px-4 py-3 rounded-md border-gray-700 dark:bg-gray-200  " />
 		</div>
 		<div className="space-y-1 text-sm">
 			
-			<input type="text" name="details" id="Email" placeholder="Service details" className="w-full px-4 py-3 rounded-md border-gray-700 dark:bg-gray-200 text-gray-900 " />
+			<input type="text" name="details" id="Email" placeholder="Service details" className="w-full px-4 py-3 rounded-md border-gray-700 dark:bg-gray-200  " />
 		</div>
 		<div className="space-y-1 text-sm">
 			
-			<input type="text" name="time" id="Email" placeholder="time" className="w-full px-4 py-3 rounded-md border-gray-700 dark:bg-gray-200 text-gray-900 " />
+			<input type="text" name="time" id="Email" placeholder="time" className="w-full px-4 py-3 rounded-md border-gray-700 dark:bg-gray-200  " />
 		</div>
 		<div className="space-y-1 text-sm">
 			
-			<input type="text" name="price" id="password" placeholder="Price" className="w-full px-4 py-3 rounded-md dark:border-gray-700 dark:bg-gray-200 text-gray-900  " />
-			<div className="flex justify-end text-xs text-gray-900">
+			<input type="text" name="price" id="password" placeholder="Price" className="w-full px-4 py-3 rounded-md dark:border-gray-700 dark:bg-gray-200   " />
+			<div className="flex justify-end text-xs text-white">
 
 			</div>
 		</div>
-		<button type='submit' className="block w-full p-3 text-center rounded-sm  bg-blue-500 text-white font-bold">Register</button>
+		<button type='submit' className="block w-full p-3 text-center rounded-sm  bg-blue-500 text-white font-bold">Add item</button>
 	</form>
     <ToastContainer/>
         </div>

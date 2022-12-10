@@ -2,6 +2,7 @@ import React, { useContext, useState } from 'react';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { ProfileContext } from '../context/UserContext';
 import { useTitle } from '../custom-Hooks/useTitle';
+ 
 
 const Register = () => {
 	useTitle('Register')
@@ -75,38 +76,35 @@ const Register = () => {
 		.catch(error => console.log(error))
 	}
     return (
-        <div className='w-full h-screen bg-blue-400 shadow-lg pt-5'>
-      <div className='flex bg-white w-8/12 mx-auto items-center rounded-md '>
-      <div className='hidden md:block lg:block'>
-        <img className='w-full'  alt='' src='https://img.freepik.com/free-vector/login-concept-illustration_114360-757.jpg?w=740&t=st=1667929148~exp=1667929748~hmac=3bf3a4d3d321efd94d4016a4406a9782c3d1fb68d2e848c3275e4bb7e4f8d7ac'/>
-      </div>
-      <div className="w-full max-w-md p-8 space-y-3 rounded-xl mx-auto bg-white my-auto text-gray-900">
-	<h1 className="text-2xl font-bold text-center text-gray-900">Register</h1>
+        <div className='mb-10 mt-5 py-8 flex flex-col w-10/12 md:w-5/12 px-5 md:px-8 m-full mx-auto divide-y rounded-md divide-gray-700 text-white shadow-lg border-2'>
+      <div className='flex w-full mx-auto items-center rounded-md '>
+      <div className="w-full space-y-3 rounded-xl my-auto text-white">
+	<h1 className="text-2xl font-bold text-center text-white">Register</h1>
 	<form onSubmit={handleRegister} className="space-y-6 ng-untouched ng-pristine ng-valid">
 		<div className="space-y-1 text-sm">
 			
-			<input type="text" name="name" id="username" placeholder="Username" className="w-full px-4 py-3 rounded-md border-gray-700 dark:bg-gray-200 text-gray-900 " />
+			<input type="text" name="name" id="username" placeholder="Username" className="w-full px-4 py-3 rounded-md border-gray-700 dark:bg-gray-200 text-black " />
 		</div>
 		<div className="space-y-1 text-sm">
 			
-			<input type="text" name="img" id="img" placeholder="Img url" className="w-full px-4 py-3 rounded-md border-gray-700 dark:bg-gray-200 text-gray-900 " />
+			<input type="text" name="img" id="img" placeholder="Img url" className="w-full px-4 py-3 rounded-md border-gray-700 dark:bg-gray-200 text-black " />
 		</div>
 		<div className="space-y-1 text-sm">
 			
-			<input type="email" name="email" id="Email" placeholder="Email" className="w-full px-4 py-3 rounded-md border-gray-700 dark:bg-gray-200 text-gray-900 " />
+			<input type="email" name="email" id="Email" placeholder="Email" className="w-full px-4 py-3 rounded-md border-gray-700 dark:bg-gray-200 text-black" />
 		</div>
 		<div className="space-y-1 text-sm">
 			
-			<input type="password" name="password" id="password" placeholder="Password" className="w-full px-4 py-3 rounded-md dark:border-gray-700 dark:bg-gray-200 text-gray-900  " />
-			<div className="flex justify-end text-xs text-gray-900">
+			<input type="password" name="password" id="password" placeholder="Password" className="w-full px-4 py-3 rounded-md dark:border-gray-700 dark:bg-gray-200 text-black" />
+			<div className="flex justify-end text-xs text-white">
                 <p>{errorMessage}</p>
 			</div>
 		</div>
-		<button type='submit' className="block w-full p-3 text-center rounded-sm  bg-blue-500 text-white font-bold">Register</button>
+		<button type='submit' className="block w-full p-3 text-center rounded-sm  bg-teal-600 text-white font-bold">Register</button>
 	</form>
-	<div className="flex items-center pt-4 space-x-1">
+	<div className="flex items-center text-white pt-4 space-x-1">
 		<div className="flex-1 h-px sm:w-16 dark:bg-gray-700"></div>
-		<p className="px-3 text-sm text-gray-900">Register with social accounts</p>
+		<p className="px-3 text-sm ">Register with social accounts</p>
 		<div className="flex-1 h-px sm:w-16 dark:bg-gray-700"></div>
 	</div>
 	<div className="flex justify-center space-x-4">
@@ -117,8 +115,8 @@ const Register = () => {
             Sign up with Google
 		</button>
 	</div>
-	<p className="text-xs text-center sm:px-6 text-gray-900">Already have an account?
-		<Link  to="/login" className="underline dark:text-blue-900">Login</Link>
+	<p className="text-sm text-center sm:px-6 text-white">Already have an account?
+		<Link  to="/login" className="underline text-sm dark:text-blue-900">Login</Link>
 	</p>
 </div>
       </div>

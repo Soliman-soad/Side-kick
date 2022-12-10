@@ -6,24 +6,27 @@ import { useTitle } from '../custom-Hooks/useTitle';
 import bio from '../image/profile.jpg'
 import ServiceCard from './ServiceCard';
 
+
+
 const Home = () => {
     const services = useLoaderData();
     useTitle('Home')
     const handleSubmit=()=>{        
         toast.success('Message send!')
     }
+
     return (
         <div>
             <div className='flex w-full flex-col-reverse md:flex-row lg:flex-row pt-5'>
-                <div className=' text-gray-800 w-1/2 text-left my-auto pl-10'>
+                <div className=' white w-1/2 text-left my-auto pl-10'>
                     <h4 className='text-sm uppercase'>
                         Welcome to my world
                     </h4>
                     <h1 className='text-5xl font-bold'>
                         Hi, I'm
-                        <span className='text-blue-400'> Soliman Alam </span>
+                        <span className='text-teal-600'> Soliman Alam </span>
                     </h1>
-                    <h3 className='text-4xl'> a  <span style={{ color: '#60a5fa', fontWeight: 'bold' }}> 
+                    <h3 className='text-4xl'> a  <span style={{ color: '#00897B', fontWeight: 'bold' }}> 
           {/* Style will be inherited from the parent element */}
            <Typewriter
             words={['private tour guide', 'storyteller', ' interpreter', 'friend']}
@@ -37,32 +40,33 @@ const Home = () => {
           />
         </span> 
                      </h3>
-                     <p className='my-8 text-lg text-gray-600'>
+                     <p className='my-8 text-lg text-white'>
                         welcome to my website, myself Soliman Alam, I am profesional privet tour guid.I am also a visual storyteller.  I have been working as a private tourist guide as well as an operator since 2010. If you want to have a nice trip with a friendly and trustworthy guide, feel free to knock me. I am here to welcome you from the bottom of my heart!
                      </p>
                 </div>
                 <div className='w-4/5'><img src={bio} className='w-full' alt=''/></div>
             </div>
 
-            <div>
+            <div className='py-24'>
                 <div className='px-10 pt-10'>
-                    <h3 className='text-sm uppercase text-blue-500 font-semibold'>services</h3>
-                    <h1 className='text-5xl uppercase'>What are my service</h1>
+                    <h3 className='text-sm uppercase text-blue-500 text-center font-semibold'>services</h3>
+                    <h1 className='text-5xl uppercase text-center'>What are my service</h1>
                 </div>
-                <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 my-5 mx-2'>
+                <div className='grid grid-cols-1 gap-10 md:grid-cols-2 lg:grid-cols-3 my-5 mx-2'>
                 {
                     services.map(service => <ServiceCard key={service._id} service={service}></ServiceCard>)
                 }
                 </div>
-            </div>      
-            <div className='w-full'>
-                <Link to='/services' className='text-blue-700 block text-center uppercase text-semibold pl-5 pb-5'>Click here for more services...</Link>
+                <div className='w-full'>
+                <Link to='/services' className='text-blue-700 block mt-10 text-center uppercase text-semibold pl-5 pb-5'>Click here for more services...</Link>
             </div>
-            <div className="px-4 py-16 mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-xl md:px-24 lg:px-8 lg:py-20">
+            </div>      
+            
+            <div className="px-4 py-16 mx-auto sm:max-w-xl mb-24 md:max-w-full lg:max-w-screen-xl md:px-24 lg:px-8 lg:py-20">
       <div className="grid gap-10 lg:grid-cols-2">
         <div className="flex flex-col justify-center md:pr-8 xl:pr-0 lg:max-w-lg">
           <div className="flex items-center justify-center w-16 h-16 mb-4 rounded-full bg-teal-accent-400">
-            <svg className="text-teal-900 w-7 h-7" viewBox="0 0 24 24">
+            <svg className="text-white w-7 h-7" viewBox="0 0 24 24">
               <polyline
                 fill="none"
                 stroke="currentColor"
@@ -105,7 +109,7 @@ const Home = () => {
             </svg>
           </div>
           <div className="max-w-xl mb-6">
-            <h2 className="max-w-lg mb-6 font-sans text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl sm:leading-none">
+            <h2 className="max-w-lg mb-6 font-sans text-3xl font-bold tracking-tight text-white sm:text-4xl sm:leading-none">
               Let us join
               <br className="hidden md:block" />
               me to your next{" "}
@@ -157,7 +161,7 @@ const Home = () => {
         </div>
       </div>
     </div>
-    <section className="py-6 dark:bg-gray-800 dark:text-gray-50">
+    <section className="py-6 dark:bg-gray-800 dark:text-gray-50 mb-24 mb-10 mt-5 py-8 flex flex-col w-10/12 m-full mx-auto divide-y rounded-md divide-gray-700 text-white shadow-lg border-2">
 	<div className="grid max-w-6xl grid-cols-1 px-6 mx-auto lg:px-8 md:grid-cols-2 md:divide-x">
 		<div className="py-6 md:py-0 md:px-6">
 			<h1 className="text-4xl font-bold">Get in touch</h1>
@@ -167,20 +171,20 @@ const Home = () => {
 					<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" className="w-5 h-5 mr-2 sm:mr-6">
 						<path fillRule="evenodd" d="M5.05 4.05a7 7 0 119.9 9.9L10 18.9l-4.95-4.95a7 7 0 010-9.9zM10 11a2 2 0 100-4 2 2 0 000 4z" clipRule="evenodd"></path>
 					</svg>
-					<span>Fake address, 9999 City</span>
+					<span>Sylhet, Bangladesh</span>
 				</p>
 				<p className="flex items-center">
 					<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" className="w-5 h-5 mr-2 sm:mr-6">
 						<path d="M2 3a1 1 0 011-1h2.153a1 1 0 01.986.836l.74 4.435a1 1 0 01-.54 1.06l-1.548.773a11.037 11.037 0 006.105 6.105l.774-1.548a1 1 0 011.059-.54l4.435.74a1 1 0 01.836.986V17a1 1 0 01-1 1h-2C7.82 18 2 12.18 2 5V3z"></path>
 					</svg>
-					<span>123456789</span>
+					<span>01515275356</span>
 				</p>
 				<p className="flex items-center">
 					<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" className="w-5 h-5 mr-2 sm:mr-6">
 						<path d="M2.003 5.884L10 9.882l7.997-3.998A2 2 0 0016 4H4a2 2 0 00-1.997 1.884z"></path>
 						<path d="M18 8.118l-8 4-8-4V14a2 2 0 002 2h12a2 2 0 002-2V8.118z"></path>
 					</svg>
-					<span>contact@business.com</span>
+					<span>solimanalam1999@gmail.com</span>
 				</p>
 			</div>
 		</div>
@@ -195,9 +199,9 @@ const Home = () => {
 			</label>
 			<label className="block">
 				<span className="mb-1">Message</span>
-				<textarea rows="3" name='message' className="block w-full rounded-md focus:ring focus:ring-opacity-75 focus:ring-violet-400 p-3 "></textarea>
+				<textarea rows="3" name='message' className="block w-full rounded-md focus:ring focus:ring-opacity-75 focus:ring-teal-400 p-3 "></textarea>
 			</label>
-			<button onClick={handleSubmit} className="self-center px-8 py-3 text-lg rounded focus:ring hover:ring focus:ring-opacity-75 dark:bg-violet-400 dark:text-gray-900 focus:ring-violet-400 hover:ring-violet-400">Submit</button>
+			<button onClick={handleSubmit} className="self-center px-8 py-3 text-lg rounded focus:ring hover:ring focus:ring-opacity-75 bg-teal-500 btn">Submit</button>
 		</div>
         <ToastContainer/>
 	</div>

@@ -48,7 +48,7 @@ const MyReviews = () => {
             }
             {
                 presentReview.map(present => {
-                    return <div key={present._id} className=" flex flex-col w-full m-full p-6 mx-auto divide-y rounded-md divide-gray-700 text-gray-900 shadow-lg border-2">
+                    return <div key={present._id} className=" flex my-10 flex-col bg-gray-800 w-full m-full p-6 mx-auto divide-y rounded-md divide-gray-700 text-white shadow-lg border-2">
             <div className="flex justify-between p-4">
                 <div className="flex space-x-4">
                     <div>
@@ -56,7 +56,7 @@ const MyReviews = () => {
                     </div>
                     <div>
                         <h4 className="font-bold">{present?.user?.providerData[0]?.displayName}</h4>
-                        <span className="text-xs dark:text-gray-700">{present.time}</span>
+                        <span className="text-xs ">{present.time}</span>
                     </div>
                 </div>
                 <div className="flex items-center space-x-2 dark:text-yellow-500">
@@ -73,7 +73,7 @@ const MyReviews = () => {
                     </div>
                 </div>
             </div>
-            <div className="p-4 space-y-2 text-sm dark:text-gray-800">
+            <div className="p-4 space-y-2 text-sm">
                 <p>{present.message}</p>
                 
             </div>

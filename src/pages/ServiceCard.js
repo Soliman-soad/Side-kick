@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { PhotoProvider, PhotoView } from 'react-photo-view';
 import 'react-photo-view/dist/react-photo-view.css';
 import { Link } from 'react-router-dom';
-import { useTitle } from '../custom-Hooks/useTitle';
+
 
 const ServiceCard = ({service}) => {
 	const[review,setReview]=useState([]);
@@ -14,7 +14,7 @@ const ServiceCard = ({service}) => {
     const presentReview=(id) => review.filter(re => re.id===id)
     return (
         <div>
-            <div className="flex flex-col text-gray-700 max-w-md p-6 space-y-6 overflow-hidden rounded-lg shadow-md hover:bg-blue-500 hover:text-white hover:p-5 ease-linear duration-75 dark:text-gray-900">
+            <div className="flex flex-col text-gray-100 max-w-md py-4 h-full px-2 space-y-6 overflow-hidden rounded-lg shadow-md hover:bg-teal-600 bg-gray-700 hover:text-white hover:p-5 ease-linear duration-75 dark:text-white">
 	<div className="flex space-x-4">
 		
 	</div>
@@ -26,7 +26,7 @@ const ServiceCard = ({service}) => {
     </PhotoProvider>
 		<h2 className="mb-1 text-xl font-semibold">{service.name}</h2>
 		<p className="text-sm ">{(service.description).slice(0,100) + '...'}</p>
-        <h3 className='text-xl py-3 text-gray-600'>Price:${service.price}</h3>
+        <h3 className='text-xl py-3 text-white'>Price:${service.price}</h3>
 	</div>
 	<div className="flex flex-wrap flex-row-reverse justify-between">
 		<div className="space-x-2">
