@@ -43,7 +43,7 @@ const AddServices = () => {
     }        
 
     return (
-        <div className='mb-10 mt-5 py-8 flex flex-col w-10/12 md:w-5/12 m-full mx-auto divide-y rounded-md divide-gray-700 text-black shadow-lg border-2'>
+        <div data-aos="zoom-in" className='mb-10 mt-5 py-8 flex flex-col w-10/12 md:w-5/12 m-full mx-auto divide-y rounded-md divide-gray-700 text-black shadow-lg border-2'>
             <h1 className='text-2xl text-center mt-5 mb-3 text-white'>Add a service</h1>
             <form onSubmit={handleRegister} className="space-y-6 p-10 ng-untouched ng-pristine ng-valid">
 		<div className="space-y-1 text-sm">
@@ -69,7 +69,7 @@ const AddServices = () => {
 
 			</div>
 		</div>
-		<button type='submit' className="block w-full p-3 text-center rounded-sm  bg-blue-500 text-white font-bold">Add item</button>
+		<button type='submit' className="block w-full p-3 text-center rounded-sm  bg-teal-500 text-white font-bold">Add item</button>
 	</form>
     <ToastContainer/>
         </div>

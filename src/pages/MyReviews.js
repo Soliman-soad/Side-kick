@@ -48,7 +48,7 @@ const MyReviews = () => {
             }
             {
                 presentReview.map(present => {
-                    return <div key={present._id} className=" flex my-10 flex-col bg-gray-800 w-full m-full p-6 mx-auto divide-y rounded-md divide-gray-700 text-white shadow-lg border-2">
+                    return <div key={present._id} className=" mb-5 flex my-10 flex-col bg-gray-800 w-full m-full p-6 mx-auto divide-y rounded-md divide-gray-700 text-white shadow-lg border-2">
             <div className="flex justify-between p-4">
                 <div className="flex space-x-4">
                     <div>

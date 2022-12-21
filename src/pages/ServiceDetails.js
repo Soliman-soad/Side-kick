@@ -63,12 +63,9 @@ const ServiceDetails = () => {
     }
     return (
         <div>
-            <PhotoProvider>
-      <PhotoView >
+            <div className='mx-auto flex flex-col w-4/5 m-full p-6 mx-auto divide-y rounded-md divide-gray-700 bg-gray-800 text-white shadow-lg border-2'>
             <img src={details[0].img} alt='' className='mx-auto w-8/12 h-96' />
-      </PhotoView>
-    </PhotoProvider>
-            <div className='px-10 py-5 mt-10  mx-auto flex flex-col w-4/5 m-full p-6 mx-auto divide-y rounded-md divide-gray-700 bg-gray-800 text-white shadow-lg border-2'>
+            <div className='px-10 py-5 mt-10  '>
             <h1 className='text-2xl py-2 font-bold text-gray-500'>{details[0].name}</h1>
                 <div className='flex items-center py-5'>
                 <h1 className='text-lg'>Price: ${details[0].price}</h1>
@@ -78,6 +75,7 @@ const ServiceDetails = () => {
                     <p>{details[0].description}</p>
                 </div>
             </div>
+            </div>
             <div className='px-24 py-10'>
                 <h1 className='uppercase text-xl text-gray-400 font-bold'>Reviews:</h1>
                 <div>
@@ -85,8 +83,8 @@ const ServiceDetails = () => {
 	<div className="flex flex-col items-center w-full">
 		
 		<form onSubmit={handleSubmit} className="flex flex-col md:flex-row justify-evenly items-center w-full">
-			<textarea name='message' rows="2" placeholder="Message..." className="p-5 mr-10 rounded-md w-3/5 resize-none text-black border-2 border-gray-500"></textarea>
-            <select name='ratings' className="border-2 mr-5 select p-2 md:py-1 py-10  w-full max-w-xs text-black">
+			<textarea name='message' rows="2" placeholder="Message..." className="p-5 bg-white mr-10 rounded-md w-3/5 resize-none text-black border-2 border-gray-500"></textarea>
+            <select name='ratings' className="border-2 mr-5 select p-2 md:py-1 py-10 bg-white  w-full max-w-xs text-black">
   <option  disabled selected>No ratings</option>
   <option value='1'>1</option>
   <option value='1.5'>1.5</option>
@@ -113,7 +111,7 @@ const ServiceDetails = () => {
         <div className='w-full'>
       {
         presentReview.map(present => {
-            return <div key={present._id} className=" flex flex-col w-full m-full p-6 mx-auto divide-y rounded-md divide-gray-700 bg-gray-800 text-white shadow-lg border-2">
+            return <div key={present._id} className=" flex flex-col w-full m-full p-6 mx-auto divide-y rounded-md divide-gray-700 bg-gray-800 text-white shadow-lg border-2 mb-5">
 	<div className="flex justify-between p-4 ">
 		<div className="flex space-x-4">
 			<div>

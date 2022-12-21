@@ -1,6 +1,4 @@
 import React, { useEffect, useState } from 'react';
-import { PhotoProvider, PhotoView } from 'react-photo-view';
-import 'react-photo-view/dist/react-photo-view.css';
 import { Link } from 'react-router-dom';
 
 
@@ -14,16 +12,15 @@ const ServiceCard = ({service}) => {
     const presentReview=(id) => review.filter(re => re.id===id)
     return (
         <div>
-            <div  data-aos="zoom-in"  className="flex flex-col text-gray-100 max-w-md py-2 h-full px-2 space-y-6 overflow-hidden rounded-lg shadow-md hover:bg-teal-600 bg-gray-700 hover:text-white hover:p-5 ease-linear duration-75 dark:text-white">
+            <div  data-aos="zoom-in"  className="flex flex-col text-gray-100 max-w-md py-2 h-full px-2 space-y-6 overflow-hidden rounded-lg shadow-md  bg-gray-700 dark:text-white">
 	<div className="flex space-x-4">
 		
 	</div>
 	<div>
-	<PhotoProvider>
-      <PhotoView >
+	<div>
+
 	  <img src={service.img} alt="" className="object-cover w-[350px] mx-auto mb-4 dark:bg-gray-500" />
-      </PhotoView>
-    </PhotoProvider>
+	</div>
 		<h2 className="mb-1 text-xl font-semibold">{service.name}</h2>
 		<p className="text-sm ">{(service.description).slice(0,100) + '...'}</p>
         <h3 className='text-xl py-3 text-white'>Price:${service.price}</h3>
