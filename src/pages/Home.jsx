@@ -5,6 +5,12 @@ import { toast, ToastContainer } from 'react-toastify';
 import { useTitle } from '../custom-Hooks/useTitle';
 import bio from '../image/profile.jpg'
 import ServiceCard from './ServiceCard';
+import { Swiper, SwiperSlide } from 'swiper/react';
+import { Autoplay, Pagination, Navigation, EffectFade } from "swiper";
+import 'swiper/css';
+import "swiper/css/pagination";
+import "swiper/css/navigation";
+import Bg from '../image/bg.jpg'
 
 
 
@@ -17,35 +23,17 @@ const Home = () => {
 
     return (
         <div>
-            <div className='flex  w-full flex-col-reverse md:flex-row lg:flex-row pt-5'>
-                <div className=' white w-1/2 text-left my-auto pl-10'>
-                    <h4 className='text-sm uppercase'>
-                        Welcome to my world
-                    </h4>
-                    <h1 className='text-5xl font-bold'>
-                        Hi, I'm
-                        <span className='text-teal-600'> Soliman Alam </span>
-                    </h1>
-                    <h3 className='text-4xl'> a  <span style={{ color: '#00897B', fontWeight: 'bold' }}> 
-          {/* Style will be inherited from the parent element */}
-           <Typewriter
-            words={['private tour guide', 'storyteller', ' interpreter', 'friend']}
-            loop={0}
-            cursor
-            cursorStyle='_'
-            typeSpeed={70}
-            deleteSpeed={50}
-            delaySpeed={1000}
-            
-          />
-        </span> 
-                     </h3>
-                     <p className='my-8 text-lg text-white'>
-                        welcome to my website, myself Soliman Alam, I am profesional privet tour guid.I am also a visual storyteller.  I have been working as a private tourist guide as well as an operator since 2010. If you want to have a nice trip with a friendly and trustworthy guide, feel free to knock me. I am here to welcome you from the bottom of my heart!
-                     </p>
-                </div>
-                <div data-aos="zoom-in" data-aos-mirror="true" className='w-4/5 hidden lg:inline md:inline'><img src={bio} className='w-full' alt=''/></div>
-            </div>
+            <div className='h-screen mx-auto relative '>
+			<div className='absolute -z-10 w-full h-full'>
+				<img src={Bg} alt="" className='h-full w-full object-cover' />
+			</div>
+			<div className='flex items-center flex-col justify-center w-full bg-slate-900/20 h-full text-center'>
+				<h3 className='text-lg font-semibold'>Welcome to Sidekick</h3>
+				<h1 className='lg:text-7xl md:text-5xl text-4xl'>We take care your Tour</h1>
+				<p className='mt-3'>We believe in travel experience with plan that suit you best.</p>
+				<button className='bg-green-500 text-white px-3 py-2 font-semibold mt-5'>Book a Tour {` >`}</button>
+			</div>
+			</div>
 
             <div data-aos="fade-up" className='py-24'>
                 <div   className='px-10 pt-10'>

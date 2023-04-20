@@ -7,7 +7,7 @@ function App() {
   
   return (
     
-    <div className=' font-[Monospace] max-h-[900px] mx-auto text-lg text-white' >
+    <div className=" max-w-screen-2xl mx-auto text-lg text-white" >
     <RouterProvider router={router}/>
     </div>
   );
