@@ -3,10 +3,10 @@ import { Link, useLoaderData } from 'react-router-dom';
 import { Typewriter} from 'react-simple-typewriter'
 import { toast, ToastContainer } from 'react-toastify';
 import { useTitle } from '../custom-Hooks/useTitle';
-import bio from '../image/profile.jpg'
+import card1 from '../image/card1.jpg'
+import card2 from '../image/card2.jpg'
+import card3 from '../image/card3.jpg'
 import ServiceCard from './ServiceCard';
-import { Swiper, SwiperSlide } from 'swiper/react';
-import { Autoplay, Pagination, Navigation, EffectFade } from "swiper";
 import 'swiper/css';
 import "swiper/css/pagination";
 import "swiper/css/navigation";
@@ -22,17 +22,63 @@ const Home = () => {
     }
 
     return (
-        <div>
-            <div className='h-screen mx-auto relative '>
+        <div className='bg-gray-800 space-y-20'>
+            <div className='h-screen mx-auto relative z-20'>
 			<div className='absolute -z-10 w-full h-full'>
 				<img src={Bg} alt="" className='h-full w-full object-cover' />
 			</div>
 			<div className='flex items-center flex-col justify-center w-full bg-slate-900/20 h-full text-center'>
-				<h3 className='text-lg font-semibold'>Welcome to Sidekick</h3>
-				<h1 className='lg:text-7xl md:text-5xl text-4xl'>We take care your Tour</h1>
+				<h3 className='text-xl font-semibold'>Welcome to Sidekick</h3>
+				<h1 className='lg:text-7xl md:text-5xl text-4xl font-semibold'>We take care your Tour</h1>
 				<p className='mt-3'>We believe in travel experience with plan that suit you best.</p>
 				<button className='bg-green-500 text-white px-3 py-2 font-semibold mt-5'>Book a Tour {` >`}</button>
 			</div>
+			</div>
+
+			<div>
+				<h1 className='text-2xl lg:text-4xl font-semibold text-center'>What kind of offer we provide you</h1>
+				<p className='text-center'>Here you can see and know why what we provide you and what are our services.</p>
+
+				<div className='grid grid-cols-3 gap-5 mt-10 mx-5'>
+					
+					<div className='relative bg-slate-700 h-96  overflow-hidden hover:bg-green-700 hover:scale-y-110 transition ease-in-out duration-200 group'>
+						<div className='absolute -right-5 -top-6'>
+							<img src={card1} alt="card" className='rounded-full w-36 h-36' />
+						</div>
+						<div className='flex flex-col justify-center h-full px-5'>
+							<h1 className='text-4xl font-mono font-semibold text-slate-500 group-hover:text-white'>01</h1>
+							<h2 className='text-2xl font-semibold mt-4 mb-1'>Various Destination</h2>
+							<p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Veniam consequuntur eius iste labore adipisci officiis, dolore pariatur cupiditate possimus, optio maiores itaque fuga repellendus laborum. Provident laboriosam repellat quo magnam.</p>
+						</div>
+					</div>
+
+
+					
+					<div className='relative bg-slate-700 h-96  overflow-hidden hover:bg-green-700 hover:scale-y-110 transition ease-in-out duration-200 group'>
+						<div className='absolute -right-5 -top-6'>
+							<img src={card2} alt="card" className='rounded-full w-36 h-36' />
+						</div>
+						<div className='flex flex-col justify-center h-full px-5'>
+							<h1 className='text-4xl font-mono font-semibold text-slate-500 group-hover:text-white'>01</h1>
+							<h2 className='text-2xl font-semibold mt-4 mb-1'>Various Destination</h2>
+							<p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Veniam consequuntur eius iste labore adipisci officiis, dolore pariatur cupiditate possimus, optio maiores itaque fuga repellendus laborum. Provident laboriosam repellat quo magnam.</p>
+						</div>
+					</div>
+
+
+					<div className='relative bg-slate-700 h-96  overflow-hidden hover:bg-green-700 hover:scale-y-110 transition ease-in-out duration-200 group'>
+						<div className='absolute -right-5 -top-6'>
+							<img src={card3} alt="card" className='rounded-full w-36 h-36' />
+						</div>
+						<div className='flex flex-col justify-center h-full px-5'>
+							<h1 className='text-4xl font-mono font-semibold text-slate-500 group-hover:text-white'>01</h1>
+							<h2 className='text-2xl font-semibold mt-4 mb-1'>Various Destination</h2>
+							<p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Veniam consequuntur eius iste labore adipisci officiis, dolore pariatur cupiditate possimus, optio maiores itaque fuga repellendus laborum. Provident laboriosam repellat quo magnam.</p>
+						</div>
+					</div>
+
+
+				</div>
 			</div>
 
             <div data-aos="fade-up" className='py-24'>
