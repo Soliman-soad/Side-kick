@@ -7,7 +7,7 @@ function App() {
   
   return (
     
-    <div className=" max-w-screen-2xl mx-auto text-white" >
+    <div className=" max-w-screen-2xl mx-auto text-white bg-[#090d29]" >
     <RouterProvider router={router}/>
     </div>
   );

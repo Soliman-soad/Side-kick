@@ -22,7 +22,7 @@ const Home = () => {
     }
 
     return (
-        <div className='bg-gray-800 space-y-20'>
+        <div className=' space-y-20'>
             <div className='h-screen mx-auto relative z-20'>
 			<div className='absolute -z-10 w-full h-full'>
 				<img src={Bg} alt="" className='h-full w-full object-cover' />
