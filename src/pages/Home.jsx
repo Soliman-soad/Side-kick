@@ -10,7 +10,8 @@ import ServiceCard from './ServiceCard';
 import 'swiper/css';
 import "swiper/css/pagination";
 import "swiper/css/navigation";
-import Bg from '../image/bg.jpg'
+import Bg from '../image/bg.jpg';
+import tour from '../image/tour.jpg'
 
 
 
@@ -24,10 +25,10 @@ const Home = () => {
     return (
         <div className=' space-y-20'>
             <div className='h-screen mx-auto relative z-20'>
-			<div className='absolute -z-10 w-full h-full'>
+			<div className='absolute -z-10 w-full h-full '>
 				<img src={Bg} alt="" className='h-full w-full object-cover' />
 			</div>
-			<div className='flex items-center flex-col justify-center w-full bg-slate-900/20 h-full text-center'>
+			<div className='flex items-center flex-col justify-center w-full bg-slate-900/20 h-full text-center bg-gradient-to-t from-[#090d29]'>
 				<h3 className='text-xl font-semibold'>Welcome to Sidekick</h3>
 				<h1 className='lg:text-7xl md:text-5xl text-4xl font-semibold'>We take care your Tour</h1>
 				<p className='mt-3'>We believe in travel experience with plan that suit you best.</p>
@@ -39,7 +40,7 @@ const Home = () => {
 				<h1 className='text-2xl lg:text-4xl font-semibold text-center'>What kind of offer we provide you</h1>
 				<p className='text-center'>Here you can see and know why what we provide you and what are our services.</p>
 
-				<div className='grid grid-cols-3 gap-5 mt-10 mx-5'>
+				<div className='grid  grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 mt-10 mx-5'>
 					
 					<div className='relative bg-slate-700 h-96  overflow-hidden hover:bg-green-700 hover:scale-y-110 transition ease-in-out duration-200 group'>
 						<div className='absolute -right-5 -top-6'>
@@ -95,6 +96,42 @@ const Home = () => {
                 <Link to='/services' className='text-blue-700 block mt-10 text-center uppercase text-semibold pl-5 pb-5'>Click here for more services...</Link>
             </div>
             </div>  
+
+				<section className='grid grid-cols-1 md:grid-cols-2 gap-5 justify-center items-center px-2 md:px-5'>
+					<div>
+						<img src={tour} alt="" className='max-w-xl object-cover mx-auto' />
+					</div>
+					<div>
+						<h1 className='text-3xl md:text-5xl font-semibold mb-5'>With Our Experience We Will Serve You</h1>
+						<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Perspiciatis, vero. Ea maxime rerum dicta illo accusamus architecto sit, molestiae enim aliquam quis accusantium sunt vel sed, alias provident doloribus fugit.</p>
+						<div>
+						<div className="px-4 py-6 mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-xl md:px-20 lg:px-6 lg:py-10">
+						<div className="grid grid-cols-1 row-gap-2 md:grid-cols-3 gap-5">
+							<div className="text-center">
+							<h6 className="text-2xl font-bold lg:text-3xl">144K</h6>
+							<p className="text-sm font-medium tracking-widest uppercase lg:text-base">
+								Downloads
+							</p>
+							</div>
+							<div className="text-center">
+							<h6 className="text-2xl font-bold lg:text-3xl">12.9K</h6>
+							<p className="text-sm font-medium tracking-widest uppercase lg:text-base">
+								Subscribers
+							</p>
+							</div>
+							<div className="text-center ">
+							<h6 className="text-2xl font-bold lg:text-3xl">48.3K</h6>
+							<p className="text-sm font-medium tracking-widest uppercase lg:text-base">
+								Users
+							</p>
+							</div>
+						</div>
+    </div>
+						</div>
+					</div>
+				</section>
+
+
             <section data-aos="fade-up" className="my-20">
 	<div className="container mx-auto flex flex-col items-center pb-6 mb-4 md:p-10 md:px-12">
 		<h1 className="text-4xl font-semibold leading-none text-center">What our customers are saying about us</h1>
