@@ -12,15 +12,15 @@ const Profile = () => {
         const name = event.target.name.value;
         const img = event.target.img.value;
         changeProfile(name,img)
-        .then(()=>{
-            console.log(user)
+        .then(()=>{    
             navigate('/profile')
         })
         .catch(error => console.log(error))
     }
-    console.log(user)
+    
     return (
         <div>
+            <div className='h-20 bg-pink-600'></div>
             <div className="w-full h-screen p-8 flex flex-col md:flex-row  sm:space-x-6 ">
 	<div className="w-5/12 max-h-screen">
 		<img src={user?.photoURL===null ? "https://img.freepik.com/free-vector/illustrated-man-with-social-media_53876-26710.jpg?w=740&t=st=1667967886~exp=1667968486~hmac=598801c588d43a5b616530d421dd2bb45698e44965f4c7f73e938082cd79efa8" :user?.photoURL } alt="" className="object-cover object-center w-full h-full rounded dark:bg-gray-500" />

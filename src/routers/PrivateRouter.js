@@ -10,10 +10,10 @@ const PrivateRouter = ({children}) => {
     const {user,loading} = useContext(ProfileContext);
     if(loading){
         // loader section
-        return <div className='mx-auto mt-10'><Triangle
+        return <div className='min-h-screen flex justify-center items-center'><Triangle
         height="80"
         width="80"
-        color="#4fa94d"
+        color="#FFC0CB"
         ariaLabel="triangle-loading"
         wrapperStyle={{}}
         wrapperClassName=""

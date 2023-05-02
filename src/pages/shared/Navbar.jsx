@@ -2,7 +2,8 @@ import React, { useContext, useState } from 'react';
 import { Link, NavLink } from 'react-router-dom';
 import { ProfileContext } from '../../context/UserContext';
 import navImg from '../../image/12796-removebg-preview.png'
-
+import { BsPersonFillAdd } from "react-icons/bs";
+import { MdModeOfTravel } from "react-icons/md";
 
 const Navbar = () => {
     const{user,logOut} = useContext(ProfileContext)
@@ -16,13 +17,13 @@ const Navbar = () => {
       textDecoration: "underline",
     };
   return (
-    <div className='absolute top-2 z-30 w-full px-4'>
-      <div>
-        <div className='flex justify-between' >
+    <div className='absolute top-2 z-30 w-full px-4 '>
+      <div className='mx-auto'>
+        <div className='flex justify-between mx-auto' >
           <h1 className='text-2xl lg:hidden'>SideKick</h1>
-          <div className="hidden lg:flex justify-evenly items-center w-full ">
-          <h1 className='text-2xl lg:block hidden'>SideKick</h1>
-          <ul className=" px-3 justify-evenly items-center space-x-8 lg:flex">
+          <div className="hidden lg:flex justify-evenly items-center w-2/3 mx-auto">
+          <h1 className='text-2xl lg:block hidden'><MdModeOfTravel className='text-3xl inline'/> SideKick</h1>
+          <ul className=" px-3 justify-evenly items-center space-x-8 lg:flex mx-auto">
             <li>
               <NavLink
                 to="/"
@@ -118,7 +119,7 @@ const Navbar = () => {
           {
               user
               ?
-              <ul className='flex items-center justify-around'>
+              <ul className='flex items-center justify-around list-none'>
                  <li className='flex items-center'>
                     <div className="relative flex-shrink-0">
 			<span onClick={signOut} title='sign out' className="absolute bottom-0 right-0 w-4 h-4 flex justify-center items-center font-semibold text-2xl bg-green-600 cursor-pointer hover:bg-red-600 border rounded-full dark:text-gray-100 transition ease-out duration-200">-</span>
@@ -128,34 +129,22 @@ const Navbar = () => {
                 </li>
               </ul>
               :
-              <>
-              <li>
+              <ul className='list-none flex items-center justify-around'>
+              <li className='flex items-center'>
               <NavLink
                 to="/register"
                 style={({ isActive }) =>
               isActive ? activeStyle : undefined
             }
-                className="inline-flex items-center justify-center h-12 px-6 font-medium tracking-wide hover:bg-[#ff4500] hover:text-white text-white transition duration-200 rounded shadow-md bg-deep-purple-accent-400 hover:bg-deep-purple-accent-700 focus:shadow-outline focus:outline-none"
+                className="inline-flex items-center justify-center h-12 px-6 text-2xl  hover:text-green-500 text-white transition duration-200 "
                 aria-label="Register"
                 title="Register"
               >
-                Register
+                <BsPersonFillAdd/>
               </NavLink>
             </li>
-            <li>
-              <NavLink
-                to="/login"
-                style={({ isActive }) =>
-              isActive ? activeStyle : undefined
-            }
-                className="inline-flex items-center justify-center h-12 px-6 font-medium tracking-wide text-white hover:bg-[#ff4500] hover:text-white transition duration-200 rounded shadow-md bg-deep-purple-accent-400 hover:bg-deep-purple-accent-700 focus:shadow-outline focus:outline-none"
-                aria-label="Register"
-                title="Sign in"
-              >
-                Sign in
-              </NavLink>
-            </li>
-              </>
+            
+              </ul>
             }
           <div>
             
