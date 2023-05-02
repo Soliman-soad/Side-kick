@@ -19,7 +19,7 @@ const { createBrowserRouter } = require("react-router-dom");
 export const router = createBrowserRouter([
     {
         path:"/",
-        element:<React.Suspense fallback={Loader}><LazyMain/></React.Suspense>,
+        element:<React.Suspense fallback={<Loader/>}><LazyMain/></React.Suspense>,
         errorElement:<ErrorPage/>,
         children:[
             {
@@ -32,21 +32,21 @@ export const router = createBrowserRouter([
             },
             {
                 path:'/',
-                element:<React.Suspense fallback={Loader}><LazyHome/></React.Suspense>,
+                element:<React.Suspense fallback={<Loader/>}><LazyHome/></React.Suspense>,
                 loader: ()=> fetch('https://sidekick-server-soliman-soad.vercel.app/services')
             },
             {
                 path:'profile',
-                element:<PrivateRouter><React.Suspense fallback={Loader}><LazyProfile/></React.Suspense></PrivateRouter>
+                element:<PrivateRouter><React.Suspense fallback={<Loader/>}><LazyProfile/></React.Suspense></PrivateRouter>
             },
             {
                 path:'services',
-                element:<React.Suspense fallback={Loader}><LazyService/></React.Suspense>,
+                element:<React.Suspense fallback={<Loader/>}><LazyService/></React.Suspense>,
                 loader: ()=> fetch('https://sidekick-server-soliman-soad.vercel.app/allServices')
             },
             {
                 path:'service/:id',
-                element:<React.Suspense fallback={Loader}><LazyServiceDetails/></React.Suspense>,
+                element:<React.Suspense fallback={<Loader/>}><LazyServiceDetails/></React.Suspense>,
                 loader: ({params}) => fetch(`https://sidekick-server-soliman-soad.vercel.app/service/${params.id}`)
             },
             {
@@ -55,7 +55,7 @@ export const router = createBrowserRouter([
             },
             {
                 path:'myReview',
-                element:<PrivateRouter><React.Suspense fallback={Loader}><LazyReviews/></React.Suspense></PrivateRouter>,
+                element:<PrivateRouter><React.Suspense fallback={<Loader/>}><LazyReviews/></React.Suspense></PrivateRouter>,
                 loader: ()=> fetch('https://sidekick-server-soliman-soad.vercel.app/allServices')
             },
             {
