@@ -32,7 +32,7 @@ const MyReviews = () => {
     })
     .then(res => res.json())
     .then(data =>{
-      console.log(data);
+      
       toast.error('Review deleted')
       setDelt(!delt)
     })

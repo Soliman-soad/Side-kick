@@ -18,7 +18,6 @@ const Register = () => {
         const password = event.target.password.value;
         const name = event.target.name.value;
         const img = event.target.img.value
-        console.log(email,password,name,img);
         register(email,password)
         .then(result => {
             const user = result.user;
@@ -35,7 +34,7 @@ const Register = () => {
 			})
 			.then(res=> res.json())
 			.then(data => {
-				console.log(data)
+				
 				localStorage.setItem('token',data.token)
 				navigate(from,{replace:true})
 			})
@@ -69,7 +68,6 @@ const Register = () => {
 			})
 			.then(res=> res.json())
 			.then(data => {
-				console.log(data)
 				localStorage.setItem('token',data.token)
 				navigate(from,{replace:true})
 			})

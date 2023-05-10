@@ -20,7 +20,7 @@ const ServiceDetails = () => {
         .then(data => setReview(data))
     },[change])
     const presentReview = review.filter(re => re.id===details[0]._id)
-    console.log(presentReview)
+
     const handleSubmit = event =>{
         event.preventDefault()
         const message = event.target.message.value;
@@ -33,7 +33,7 @@ const ServiceDetails = () => {
             title:details[0].name,
             time:moment().format('MMMM Do YYYY, h:mm:ss a') 
         }
-        console.log(message,ratings,ratingsData)
+
         fetch(`https://sidekick-server-soliman-soad.vercel.app/review/${details[0]._id}`,{
             method:"POST",
             headers:{
@@ -46,7 +46,7 @@ const ServiceDetails = () => {
         .then(data => {
             setChange(!change)
             event.target.reset();
-            console.log(data)})
+           })
             
     }
     const handleError =()=>{
@@ -63,18 +63,28 @@ const ServiceDetails = () => {
     }
     return (
         <div>
-            <div className='mx-auto flex flex-col w-4/5 m-full p-6 mx-auto divide-y rounded-md divide-gray-700 bg-gray-800 text-white shadow-lg border-2'>
-            <img src={details[0].img} alt='' className='mx-auto w-8/12 h-96' />
+            <div className='h-20 bg-pink-600'></div>
+            <div className='mx-auto flex flex-col w-11/12 m-full p-6 mt-5 divide-y rounded-md divide-gray-700 bg-gray-800 text-white shadow-lg border-2'>
+            <img src={details[0].img} alt='' className='mx-auto w-10/12 h-96 object-contain' />
             <div className='px-10 py-5 mt-10  '>
-            <h1 className='text-2xl py-2 font-bold text-gray-500'>{details[0].name}</h1>
-                <div className='flex items-center py-5'>
+            <h1 className='text-2xl py-2 font-bold text-gray-500'>{details[0].name}</h1>                
                 <h1 className='text-lg'>Price: ${details[0].price}</h1>
-                <button className='text-white rounded-md font-bold ml-5 hover:bg-white hover:border hover:border-blue-500 hover:text-blue-600 ease-linear duration-75 bg-teal-600 px-4 py-2'>Buy this Package</button>
-                </div>
                 <div>
                     <p>{details[0].description}</p>
                 </div>
             </div>
+            <button
+             onClick={()=>{toast.success('Package added!', {
+                position: "top-center",
+                autoClose: 3000,
+                hideProgressBar: false,
+                closeOnClick: true,
+                pauseOnHover: true,
+                draggable: true,
+                progress: undefined,
+                theme: "light",
+                });}} 
+             className='text-white rounded-md font-bold bg-pink-600 px-4 py-2'>Buy this Package</button>
             </div>
             <div className='px-24 py-10'>
                 <h1 className='uppercase text-xl text-gray-400 font-bold'>Reviews:</h1>
@@ -99,11 +109,11 @@ const ServiceDetails = () => {
 			{
                 user?
                 <>
-                <button type="submit" className="py-2 px-2 disabled:opacity-30  my-8 font-semibold rounded-md text-white bg-teal-600">Leave feedback</button>
+                <button type="submit" className="py-2 px-2 disabled:opacity-30  my-8 font-semibold rounded-md text-white bg-pink-600">Leave feedback</button>
                 </>
                 :
                 <div >
-                <button type='button' onClick={()=>handleError()} className="py-2 px-2   my-8 font-semibold rounded-md text-white bg-teal-600">Leave feedback</button>
+                <button type='button' onClick={()=>handleError()} className="py-2 px-2   my-8 font-semibold rounded-md text-white bg-pink-600">Leave feedback</button>
                 </div>
             }
             <ToastContainer/>

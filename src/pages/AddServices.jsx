@@ -9,7 +9,7 @@ const AddServices = () => {
         const name = event.target.name.value;
         const img = event.target.img.value;
         const time = event.target.time.value;
-        console.log(details,price,name,img,time);
+      
         const data = {
             name:name,
             img:img,
@@ -38,7 +38,7 @@ const AddServices = () => {
                 progress: undefined,
                 theme: "light",
                 });    
-            console.log(data)})
+            })
             
     }        
 

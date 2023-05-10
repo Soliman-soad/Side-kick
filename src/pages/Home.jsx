@@ -40,7 +40,7 @@ const Home = () => {
 				<h3 className='text-xl font-semibold'>Welcome to Sidekick</h3>
 				<h1 className='lg:text-7xl md:text-5xl text-4xl font-semibold'>We take care your Tour</h1>
 				<p className='mt-3'>We believe in travel experience with plan that suit you best.</p>
-				<button className='bg-green-500 text-white px-3 py-2 font-semibold mt-5'>Book a Tour {` >`}</button>
+				<Link to='/services' className='bg-green-500 text-white px-3 py-2 font-semibold mt-5'>Book a Tour {` >`}</Link>
 			</div>
 			</div>
 
