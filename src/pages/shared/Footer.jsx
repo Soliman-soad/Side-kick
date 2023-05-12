@@ -6,12 +6,12 @@ import { AiFillGithub } from "react-icons/ai";
 
 const Footer = () => {
     return (
-      <div className='text-white bg-gray-800 p-16 flex items-center mx-auto justify-center mt-16'>
-      <div className='border-r-2 border-white pr-10'>
+      <div className='text-white bg-gray-800 p-16 md:flex items-center mx-auto justify-center mt-16'>
+      <div className='md:border-r-2 border-white pr-10'>
       <h2 className='flex items-center text-4xl font-semibold text-slate-100'><MdModeOfTravel/> sidekick</h2>
       <p>Tour guide expert to make a perfect tour</p>
       </div>
-      <div className='ml-10'>
+      <div className='md:ml-10 text-center md:text-left'>
           <h1 className='text-xl font-bold'>
               Md Soliman Alam
           </h1>

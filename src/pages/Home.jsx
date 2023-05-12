@@ -106,8 +106,8 @@ const Home = () => {
             </div>  
 
 				<section className='grid grid-cols-1 md:grid-cols-2 gap-5 justify-center items-center px-2 md:px-5'>
-					<div >
-						<img src={tour} alt="" className='max-w-xl object-cover mx-auto rounded-md' />
+					<div className='max-w-xl'>
+						<img src={tour} alt="" className='object-cover mx-auto rounded-md' />
 					</div>
 					<div>
 						<h1 className='text-3xl md:text-5xl font-semibold mb-5'>With Our Experience We Will Serve You</h1>
@@ -142,7 +142,7 @@ const Home = () => {
 
 			<section  className='relative z-20'>
 				<img src={hill} alt="" className='h-full w-full absolute object-cover -z-10' />
-				<div className='grid grid-cols-2 bg-gray-700/70  py-10 items-center'>
+				<div className='grid grid-cols-1 md:grid-cols-2 bg-gray-700/70  py-10 items-center'>
 					<div className='px-10'>
 						<div className='text-white rounded-full w-14 h-14 object-cover bg-pink-600 flex justify-center items-center relative'>
 							<div className='h-full w-full rounded-full bg-pink-600 animate-ping absolute z-0'></div>
@@ -153,7 +153,7 @@ const Home = () => {
 					</div>
 
 
-					<div className='grid grid-cols-2 gap-4'>
+					<div className='grid grid-cols-1 mt-5 md:mt-0 mx-auto  md:grid-cols-2 gap-4'>
 						<div data-aos="flip-right" className='flex justify-center items-center flex-col w-64 h-52 border group rounded-md cursor-pointer group-hover:border-green-600'>
 							<GiDeer className='text-6xl text-pink-600 group-hover:-scale-x-100 transform transition duration-200'/>
 							<h2 className='font-semibold text-lg group-hover:text-pink-600'>Wildlife Tour</h2>
@@ -173,7 +173,7 @@ const Home = () => {
 					</div>
 				</div>
 
-				<div className='grid grid-cols-4 bg-pink-600 text-4xl text-white py-14 px-8'>
+				<div className='grid grid-cols-4 hidden md:block bg-pink-600 text-4xl text-white py-14 px-8'>
 					<h1 className='font-mono'>Our Partner</h1>
 					<div className='col-span-3'>
 					<Swiper

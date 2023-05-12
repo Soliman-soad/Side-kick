@@ -46,7 +46,7 @@ const Profile = () => {
 				<label htmlFor="img" className="block text-sm">Image url</label>
 				<input type="text" name="img" id="img" placeholder={user?.photoURL ===null ? 'default' : user?.photoURL} className="w-full px-3 py-2 border rounded-md dark:border-gray-700 dark:bg-white focus:dark:border-violet-400" />
 			</div>
-            <button type="submit" className="w-full px-8 mt-5 py-3 font-semibold rounded-md bg-teal-500 text-white">Update profile</button>
+            <button type="submit" className="w-full px-8 mt-5 py-3 font-semibold rounded-md bg-pink-500 text-white">Update profile</button>
             </form>
 		</div>
 	</div>
